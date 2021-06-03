@@ -5,10 +5,6 @@ public class TestConfiguration {
     private final ApplicationDriver driver;
     private final ApplicationRunner applicationRunner;
 
-    public TestConfiguration() {
-        this(new ApplicationBuilderForTest());
-    }
-
     public TestConfiguration(ApplicationBuilderForTest builder) {
         SharedMemory sharedMemory = builder.getInputOutput();
         driver = new ApplicationDriver(sharedMemory);

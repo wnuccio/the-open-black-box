@@ -6,12 +6,17 @@ public abstract class BaseAcceptanceTest {
 
     @BeforeEach
     final void init() {
-        TestConfiguration configuration = new TestConfiguration();
+        ApplicationBuilderForTest builder = getApplicationBuilder();
+        TestConfiguration configuration = new TestConfiguration(builder);
         ApplicationRunner application = configuration.applicationRunner();
         application.runApplication();
 
         ApplicationDriver driver = configuration.applicationDriver();
         setup(driver);
+    }
+
+    protected ApplicationBuilderForTest getApplicationBuilder() {
+        return new ApplicationBuilderForTest();
     }
 
     protected abstract void setup(ApplicationDriver driver);
