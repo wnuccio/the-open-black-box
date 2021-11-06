@@ -1,2 +1,2 @@
 # the-open-black-box
-A collection of design pattern for e2e testing
+A collection of design patterns for e2e testing
